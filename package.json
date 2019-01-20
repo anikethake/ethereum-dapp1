@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "next dev"
+    "dev": "node server.js "
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bignumber.js": "^8.0.2",
     "fs-extra": "^7.0.1",
     "ganache-cli": "^6.2.5",
     "mocha": "^5.2.0",
     "next": "^4.1.4",
+    "next-routes": "^1.4.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "semantic-ui-css": "^2.4.1",

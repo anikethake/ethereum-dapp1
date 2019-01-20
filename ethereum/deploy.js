@@ -21,4 +21,4 @@ const deploy = async () => {
 };
 deploy();
 
-//contract address of deployed factory ->  0x3040c40C37d7C4a4c61F696EC2265fDDB8958Aa2
+//contract address of deployed factory ->  0xaa380DB33187ad9ff49D64aa7d74EE021A099a26

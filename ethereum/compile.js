@@ -17,6 +17,7 @@ const output = solc.compile(source,1).contracts;
 //other from the CampaignFactory
 //.contracts is the property that we are interested in
 
+console.log(output);
 //make sure we create the build dir
 fs.ensureDirSync(buildPath);
 
