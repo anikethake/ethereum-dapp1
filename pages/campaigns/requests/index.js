@@ -12,6 +12,7 @@ class RequestIndex extends Component{
 		//get total number of requests
 		const campaign = Campaign(address);
 		const requestCount = await campaign.methods.getRequestCount().call();
+		const approversCount = await campaign.methods.approversCount().call();
 
 		//fancy JS
 		const requests = await Promise.all(
@@ -23,7 +24,7 @@ class RequestIndex extends Component{
 			);
 		//console.log(requests);
 
-		return {address, requests, requestCount};
+		return {address, requests, requestCount, approversCount};
 	}
 
 	//iterate over row of requests
@@ -31,8 +32,10 @@ class RequestIndex extends Component{
 		return this.props.requests.map((request, index) => {
 			return <RequestRow
 				key={index}
+				id={index}
 				request={request}
 				address={this.props.address}
+				approversCount = {this.props.approversCount}
 			/>
 		});
 	}
@@ -45,7 +48,7 @@ class RequestIndex extends Component{
 					<h3> Pending Requests</h3>
 					<Link route={`/campaigns/${this.props.address}/requests/new`}>
 						<a>
-							<Button primary>Create a new spending request`</Button>
+							<Button primary floated="right" style={{marginBottom:10}}>Create a new spending request`</Button>
 						</a>
 					</Link>
 					<Table>
@@ -64,6 +67,7 @@ class RequestIndex extends Component{
 							{this.renderRow()}
 						</Body>
 					</Table>
+					<div>Found {this.props.requestCount} requests</div>
 				</Layout>
 			);
 	}	

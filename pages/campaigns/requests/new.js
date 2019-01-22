@@ -74,7 +74,7 @@ class RequestNew extends Component {
 						onChange={event => this.setState({recipient:event.target.value})}
 					/>
 				</Form.Field>
-				<Message error header="OOPS!" content={this.state.errorMessage}/>
+				<Message error header="OOPS!" content="Only the manager of the campaign can create a spending request"/>
 				<Button primary loading={this.state.loading}>Create</Button>
 				</Form>
 			</Layout>
